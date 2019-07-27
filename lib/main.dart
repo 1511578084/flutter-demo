@@ -1,3 +1,6 @@
+import 'package:demo/lession1/abort.dart';
+import 'package:demo/lession1/formDemo.dart';
+import 'package:demo/lession1/materialCompDemo.dart';
 import 'package:flutter/material.dart';
 import 'lession1/list-view.dart';
 import 'lession1/navigator.dart';
@@ -16,11 +19,19 @@ void main() => runApp(App());
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: Home(),
+      initialRoute: '/material',
+      routes: {
+        '/': (context) => Home(),
+        '/abort': (context) => AbortDemo(),
+        '/form': (context) => FormDemo(),
+        '/material': (context) => MaterialCompDemo(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
-        splashColor: Colors.white70
+        splashColor: Colors.white70,
+        accentColor: Colors.lightBlue,
       ),
     );
   }

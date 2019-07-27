@@ -1,5 +1,5 @@
+import 'package:demo/lession1/detail.dart';
 import 'package:flutter/material.dart';
-
 import '../model/listData.dart';
 
 class ListViewDemo extends StatelessWidget {
@@ -11,14 +11,38 @@ class ListViewDemo extends StatelessWidget {
     return Container(
       color: Colors.white,
       margin: EdgeInsets.all(8),
-      child: Column(
+      child: Stack(
         children: <Widget>[
-          Image.network(p.imageUrl),
-          SizedBox(height: 10,),
-          Text(p.title),
-          SizedBox(height: 10,),
-          Text(p.author),
+          Column(
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network(p.imageUrl, fit: BoxFit.cover,),
+              ),
+              SizedBox(height: 10,),
+              Text(p.title),
+              SizedBox(height: 10,),
+              Text(p.author),
+            ],
+          ),
+          Positioned.fill(
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    splashColor: Colors.white10,
+                    highlightColor: Colors.white60,
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => DetailDemo(posts[index]),
+                        )
+                      );
+                    },
+                  ),
+                ),
+              )
         ],
+        
       ),
     );
   }
