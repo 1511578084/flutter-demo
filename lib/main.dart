@@ -2,13 +2,19 @@ import 'package:demo/lession1/abort.dart';
 import 'package:demo/lession1/formDemo.dart';
 import 'package:demo/lession1/materialCompDemo.dart';
 import 'package:flutter/material.dart';
+import 'lession1/animationDemo.dart';
+import 'lession1/httpDemo.dart';
 import 'lession1/list-view.dart';
+import 'lession1/modelDemo.dart';
 import 'lession1/navigator.dart';
 import 'lession1/basicDemo.dart';
 import 'lession1/layoutDemo.dart';
 import 'lession1/pageViewDemo.dart';
 import 'lession1/gridViewDemo.dart';
 import 'lession1/customScrollViewDemo.dart';
+import 'lession1/provider.dart';
+import 'lession1/streamDemo.dart';
+
 
 void main() => runApp(App());
 
@@ -20,12 +26,17 @@ void main() => runApp(App());
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: Home(),
-      initialRoute: '/material',
+      initialRoute: '/animationDemo',
       routes: {
         '/': (context) => Home(),
         '/abort': (context) => AbortDemo(),
         '/form': (context) => FormDemo(),
         '/material': (context) => MaterialCompDemo(),
+        '/stateDemo': (context) => StateDemo(),
+        '/modelDemo': (context) => ModelDemo(),
+        '/streamDemo': (context) => StreamDemo(),
+        '/httpDemo': (context) => HttpDemo(),
+        '/animationDemo': (context) => AnimationDemo(),
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
